@@ -30,7 +30,10 @@ php artisan lunar:install
 
 ## step 4: Setup Account admin in Terminal
 
-## step 5: Run source
+## step 5: Run Seeder
+php artisan db:seed
+
+## step 6: Run source
 php artisan serve
 
 Page admin: http://<yoursite>/hub
