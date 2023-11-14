@@ -1,0 +1,52 @@
+# Set the Docker Compose file format
+version: '3.9'
+
+# Define toolbox network
+networks:
+    backend:
+        name: lunar-network
+        driver: bridge
+
+# Define volumes
+volumes:
+    mariadb-storage:
+        driver: local
+
+# Define the services that make up the project
+services:
+
+    mariadb:
+        image: mariadb:10.9
+        environment:
+            TZ: Asia/Ho_Chi_Minh
+            MARIADB_DATABASE:
+            MARIADB_USER: 'lunar'
+            MARIADB_PASSWORD: 'password'
+            MARIADB_RANDOM_ROOT_PASSWORD: 'yes'
+        volumes:
+            - 'mariadb-storage:/var/lib/mysql'
+            - './database:/docker-entrypoint-initdb.d'
+        networks:
+            - backend
+        ports:
+            - '3309:3306'
+        healthcheck:
+            test: [ 'CMD', 'mysqladmin', 'ping' ]
+            retries: 3
+            timeout: 5s
+
+
+    phpmyadmin:
+        image: phpmyadmin:latest
+        environment:
+            TZ: Asia/Ho_Chi_Minh
+            PMA_HOST: 'mariadb'
+            PMA_USER: 'lunar'
+            PMA_PASSWORD: 'password'
+            UPLOAD_LIMIT: '300M'
+        depends_on:
+            - mariadb
+        networks:
+            - backend
+        ports:
+            - '20083:80'
