@@ -7,6 +7,7 @@ use App\Http\Livewire\CollectionPage;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\ProductPage;
 use App\Http\Livewire\SearchPage;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,11 @@ Route::get('change-language', ChangeLanguage::class)->name('change-language.view
 Route::get('checkout', CheckoutPage::class)->name('checkout.view');
 
 Route::get('checkout/success', CheckoutSuccessPage::class)->name('checkout-success.view');
+
+Route::get('chat', function () {
+    return view('chat');
+});
+
+Route::post('message', function (Request $request) {
+ return $request->input('message');
+});

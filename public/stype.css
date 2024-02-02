@@ -1,0 +1,141 @@
+/* General styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #18BC9C;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Messaging section */
+.messaging {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inbox_msg {
+    display: flex;
+    flex-direction: row;
+}
+
+.inbox_people {
+    width: 250px;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.chat_list {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.chat_people {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat_img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.chat_ib {
+    flex: 1;
+}
+
+.chat_date {
+    font-size: 12px;
+    color: #999;
+}
+
+.mesgs {
+    flex: 1;
+    padding: 20px;
+}
+
+.msg_history {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.incoming_msg,
+.outgoing_msg {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.incoming_msg_img,
+.sent_msg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.received_msg {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.received_withd_msg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time_date {
+    font-size: 12px;
+    color: #999;
+}
+
+.outgoing_msg {
+    flex-direction: row-reverse;
+}
+
+.sent_msg {
+    background-color: #18BC9C;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.type_msg {
+    margin-top: 20px;
+}
+
+.input_msg_write {
+    display: flex;
+}
+
+.write_msg {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.msg_send_btn {
+    background-color: #18BC9C;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
